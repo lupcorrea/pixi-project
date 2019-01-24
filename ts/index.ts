@@ -55,15 +55,19 @@ app.renderer.view.style.display = "block";
 app.renderer.autoResize = true;
 app.renderer.resize (SCREEN_WIDTH, SCREEN_HEIGHT);
 
-// Image loading
-Loader
-    .add (CARD_IMAGE)
-    .load (setup);
-
-function setup() {
+// Cat Deck functions
+function catDeck() {
+    Loader
+        .add (CARD_IMAGE)
+        .load (setupCatDeck);
+}
+function setupCatDeck() {
     let cardStack: Array<Card> = [];
     for (var cardID = 0; cardID < CARD_STACK_SIZE; cardID++) {
         cardStack.push (new Card (cardID));
         cardStack [cardID].startMoving();
     }
 }
+
+// Uncomment line below for the first task
+// catDeck();
