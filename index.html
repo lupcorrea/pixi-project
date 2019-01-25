@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
+        <link rel="stylesheet" type="text/css" href="./style.css">
         <meta charset="utf-8">
         <title>Pixi Project</title>
     </head>
 
-    <script src="./node_modules/pixi.js/dist/pixi.min.js" charset="utf-8"></script>
+    <script src="./node_modules/pixi.js/dist/pixi.min.js"></script>
 
     <body>
-        <script src="./js/game.js" charset="utf-8"></script>
+        <script src="./js/fullscreen.js"></script>
+        <div id="control-panel">
+            <button onclick="openFullscreen();">Open Fullscreen</button>
+            <button onclick="closeFullscreen();">Close Fullscreen</button>
+        </div>
+
+        <script src="./js/game.js"></script>
+
+        <div id="tasks-panel">
+            <button onclick="firstTask();">First Task</button>
+            <button onclick="secondTask();">Second Task</button>
+        </div>
+
     </body>
 </html>

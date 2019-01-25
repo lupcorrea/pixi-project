@@ -9,7 +9,7 @@ const CARD_STACK_SIZE = 144;
 const CARD_HEIGHT = SCREEN_HEIGHT / 4;
 const CARD_WIDTH = 0.775 * CARD_HEIGHT;
 
-// Random UI constants
+// UI Task constants
 const IMG_COLLECTION = [
     "./img/cat-0.png",
     "./img/cat-1.png",
@@ -50,6 +50,17 @@ let Loader = PIXI.loader;
 let Resources = PIXI.loader.resources;
 let Sprite = PIXI.Sprite;
 
+// Canvas drawing
+let app = new Application();
+document.body.appendChild (app.view);
+app.renderer.view.style.position = "absolute";
+app.renderer.view.style.display = "block";
+app.renderer.autoResize = true;
+app.renderer.resize (SCREEN_WIDTH, SCREEN_HEIGHT);
+
+// Control flag
+let taskID = 0;
+
 // Class for a card
 class Card {
     private sprite = new Sprite();
@@ -82,21 +93,21 @@ class Card {
     }
 }
 
-// Canvas drawing
-let app = new Application();
-document.body.appendChild (app.view);
-app.renderer.view.style.position = "absolute";
-app.renderer.view.style.display = "block";
-app.renderer.autoResize = true;
-app.renderer.resize (SCREEN_WIDTH, SCREEN_HEIGHT);
-
 // Cat Deck functions
-function catDeck() {
-    Loader
-        .add (CARD_IMAGE)
-        .load (setupCatDeck);
+function firstTask() {
+    if (taskID != 1) {
+        taskID = 1;
+        if (Resources [CARD_IMAGE]) {
+            setupCatDeck();
+        } else {
+            Loader
+                .add (CARD_IMAGE)
+                .load (setupCatDeck);
+        }
+    }
 }
 function setupCatDeck() {
+    app.stage.removeChildren();
     let cardStack: Array<Card> = [];
     for (var cardID = 0; cardID < CARD_STACK_SIZE; cardID++) {
         cardStack.push (new Card (cardID));
@@ -105,13 +116,13 @@ function setupCatDeck() {
 }
 
 // Uncomment line below for the first task
-//catDeck();
+//firstTask();
 
 class RowBuilder {
     private frameCounter = 0;
 
     startGeneration = () => {
-        requestAnimationFrame (this.startGeneration);
+        if (taskID == 2) requestAnimationFrame (this.startGeneration);
 
         if (this.frameCounter == 0) {
             app.stage.removeChildren();
@@ -165,16 +176,23 @@ class RowBuilder {
     };
 }
 
-function uiTask() {
-    Loader
-        .add (IMG_COLLECTION)
-        .load (setupUITask);
+function secondTask() {
+    if (taskID != 2) {
+        taskID = 2;
+        if (Resources [IMG_COLLECTION [0]]) {
+            setupUITask();
+        } else {
+            Loader
+                .add (IMG_COLLECTION)
+                .load (setupUITask);
+        }
+    }
 }
 function setupUITask() {
+    app.stage.removeChildren();
     let builder = new RowBuilder();
     requestAnimationFrame (builder.startGeneration);
 }
 
-
 // Uncomment line below for the second task
-uiTask();
+// secondTask();

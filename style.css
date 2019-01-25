@@ -1,0 +1,54 @@
+/* Default screen styling */
+body {
+    background-color: black;
+}
+* {
+    padding: 0;
+    margin: 0
+}
+
+/* Full screen styling */
+:-webkit-full-screen {
+    background-color: black;
+}
+:-moz-full-screen {
+    background-color: black;
+}
+:-ms-fullscreen {
+    background-color: black;
+}
+:fullscreen {
+    background-color: black;
+}
+
+/* Control Panel styling */
+#control-panel {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+#control-panel button {
+    margin: 10px;
+    margin-top: 50px;
+    text-align: center;
+    height: 25px;
+    border-radius: 12px;
+}
+
+/* Tasks Panel styling */
+#tasks-panel {
+    width: 50%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 12px;
+}
+
+#tasks-panel button {
+    margin: 10px;
+    margin-bottom: 50px;
+    text-align: center;
+    height: 25px;
+}
