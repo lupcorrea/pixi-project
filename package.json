@@ -1,0 +1,28 @@
+{
+  "name": "softgames",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lupcorrea/pixi-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lupcorrea/pixi-project/issues"
+  },
+  "homepage": "https://github.com/lupcorrea/pixi-project#readme",
+  "dependencies": {
+    "@types/node": "^10.12.18",
+    "@types/pixi.js": "^4.8.6",
+    "pixi.js": "^4.8.5"
+  },
+  "devDependencies": {
+    "pixi-particles": "^3.1.0"
+  }
+}
