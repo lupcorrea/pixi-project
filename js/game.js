@@ -1,6 +1,6 @@
 "use strict";
 const SCREEN_WIDTH = window.innerWidth;
-const SCREEN_HEIGHT = window.innerHeight;
+const SCREEN_HEIGHT = window.innerHeight * 0.75;
 // Cat Deck constants
 // The dimension proportion are an approximation of B8 format
 // according to ISO 216, used by poker cards.
@@ -67,7 +67,7 @@ class Card {
         this.move = () => {
             if (this.frameCounter < 120)
                 requestAnimationFrame(this.move);
-            this.sprite.x += 4;
+            this.sprite.x += SCREEN_WIDTH / 240;
             this.frameCounter++;
             //if (this.frameCounter == 120) this.sprite.y = (0.25 * this.stackPosition) + (SCREEN_HEIGHT / 2);
         };

@@ -43,7 +43,6 @@ body {
     bottom: 0;
     margin-left: 25%;
     margin-right: 25%;
-    border-radius: 12px;
 }
 
 #tasks-panel button {
@@ -51,4 +50,5 @@ body {
     margin-bottom: 50px;
     text-align: center;
     height: 25px;
+    border-radius: 12px;
 }
