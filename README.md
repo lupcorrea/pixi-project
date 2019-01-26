@@ -50,7 +50,8 @@ _To do_
 ## To-do list
 _To do_
 
-- [ ] Finish writing this Readme
-- [ ] Integrate Webpack to this project
-- [ ] Refactor code into modules
-- [ ] Come up with a better interface
+* Finish writing this Readme
+* Play with particles and create an awesome flame effect!
+* Integrate Webpack to this project
+* Refactor code into modules
+* Come up with a better interface
