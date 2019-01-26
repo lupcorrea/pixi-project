@@ -1,4 +1,4 @@
-# PIXI Practice Task
+# PIXI Project
 
 ## Table of contents
 1. [Introduction](#intro)
